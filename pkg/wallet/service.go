@@ -52,6 +52,7 @@ func (s *Service) RegisterAccount(phone types.Phone) (*types.Account, error) {
 }
 
 func (s *Service) Deposit(accountID int64, amount types.Money) error {
+	
   if amount <= 0 {
     return ErrAmountMustBePositive
 
@@ -66,7 +67,7 @@ func (s *Service) Deposit(accountID int64, amount types.Money) error {
     }
 
   }
-  
+
   if account == nil {
     return ErrAccountNotFound
   }
